@@ -6,6 +6,8 @@
 
 package mx.unam.aragon.fes.gui;
 
+import mx.unam.aragon.fes.Empleado;
+
 /**
  *
  * @author carlos
@@ -26,7 +28,6 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -59,23 +60,13 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
         jTextField14 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        jTextField15 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-
-        org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 100, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 100, Short.MAX_VALUE)
-        );
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -248,7 +239,7 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
 
         jTextField13.setText("jTextField13");
 
-        jLabel12.setText("Sueldo:");
+        jLabel12.setText("Sueldo Mensual:");
 
         jTextField14.setText("jTextField14");
 
@@ -256,9 +247,7 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
 
         jLabel14.setText("Horas Extra");
 
-        jTextPane1.setBackground(new java.awt.Color(204, 204, 204));
-        jTextPane1.setText("0");
-        jScrollPane1.setViewportView(jTextPane1);
+        jTextField15.setText("jTextField15");
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -274,13 +263,13 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
                     .add(jLabel14))
                 .add(18, 18, 18)
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jTextField12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 110, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jTextField13, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 350, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(jTextField14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 168, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jLabel13)))
+                        .add(jLabel13))
+                    .add(jTextField15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(446, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -299,11 +288,11 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
                     .add(jLabel12)
                     .add(jTextField14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel13))
-                .add(33, 33, 33)
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                .add(38, 38, 38)
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel14)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(177, Short.MAX_VALUE))
+                    .add(jTextField15, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Empresariales", jPanel1);
@@ -316,6 +305,16 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
 
         jButton4.setText("<<");
 
+        jButton5.setText("Nuevo Registro");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        jButton6.setText("Enviar");
+        jButton6.setEnabled(false);
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -325,7 +324,10 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jTabbedPane1)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
+                        .add(jButton5)
+                        .add(18, 18, 18)
+                        .add(jButton6)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(jButton4)
                         .add(18, 18, 18)
                         .add(jButton3)
@@ -345,7 +347,9 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
                     .add(jButton1)
                     .add(jButton2)
                     .add(jButton3)
-                    .add(jButton4))
+                    .add(jButton4)
+                    .add(jButton5)
+                    .add(jButton6))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
 
@@ -354,6 +358,36 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        System.out.println("Nuevo empleado!!");
+        this.limpiarFormulario();
+        Empleado emp = new Empleado();
+        emp.setNombre(this.jTextField.getText());
+        emp.setApPaterno(this.jTextField2.getText());
+        emp.setApMeterno(jTextField3.getText());
+        emp.setEdad( Integer.parseInt( jTextField4.getText() ) );
+        emp.setCurp(jTextField5.getText());
+        emp.setDomicio().setCalle(this.jTextField6.getText());
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void limpiarFormulario(){
+      this.jTextField1.setText("");
+      this.jTextField2.setText("");
+      this.jTextField3.setText("");
+      this.jTextField4.setText(""); 
+      this.jTextField5.setText("");
+      this.jTextField6.setText("");
+      this.jTextField7.setText("");
+      this.jTextField8.setText("");
+      this.jTextField9.setText("");
+      this.jTextField10.setText("");
+      this.jTextFiel10.setColumns(10); // arreglar las dimensiones del panel de texto 10
+      this.jTextField11.setText("");
+      this.jTextField12.setText("");
+      this.jTextField13.setText("");
+      this.jTextField14.setText("");
+    }
     /**
      * @param args the command line arguments
      */
@@ -394,6 +428,8 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -410,9 +446,7 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
@@ -420,6 +454,7 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
+    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -428,7 +463,6 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
-    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 
 }
