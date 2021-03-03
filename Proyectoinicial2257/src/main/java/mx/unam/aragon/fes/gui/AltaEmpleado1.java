@@ -378,7 +378,7 @@ public class AltaEmpleado1 extends javax.swing.JFrame {
         emp.setDepartamento(this.jTextField12.getText());
         emp.Sueldo(Float.parseFloat(this.jTextField13.getText()));
         emp.setHorasExtra(Integer.parserInt(This.jTextField14.getText()));
-        int confirmar = J0ptionPane.showConfirmDialog(this, "¿Deseas guardar estos datos?")
+        int confirmar = J0ptionPane.showConfirmDialog(this, "¿Deseas guardar estos datos?");
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void limpiarFormulario(){
